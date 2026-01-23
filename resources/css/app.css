@@ -9,3 +9,626 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Tattoo Studio Website Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #7b7f5d;
+    --blue: #405060;
+    --beige: #e8e4df;
+    --dark: #2a2a2a;
+    --light: #fafafa;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    background: url('@/../../public/images/bg-1.jpg') center/cover fixed no-repeat;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Megrim', cursive;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 50px;
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: auto;
+    gap: 500px;
+}
+
+nav .logo {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+}
+
+nav .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+nav .menu-left {
+    order: 1;
+}
+
+nav .menu-right {
+    order: 3;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav li {
+    font-family: inherit;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('@/../../public/images/banner.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 72px;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-button-bar {
+    background: var(--green);
+    width: 100%;
+    padding: 18px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hero-button:hover {
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+/* Artists Section */
+.artists-section {
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(6, 52, 97, 0.6);
+}
+
+.artists-header {
+    padding: 80px 50px 50px;
+}
+
+.artists-section h2 {
+    font-size: 48px;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.artists-subtitle {
+    font-size: 13px;
+    color: var(--dark);
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.artists-content {
+    box-shadow: 0 -50px 250px rgba(6, 52, 97, 0.6);
+    background: linear-gradient(rgba(64, 80, 96, 0.85), rgba(64, 80, 96, 0.85)), url('@/../../public/images/bg-2.jpg') center/cover no-repeat;
+    padding: 100px 50px;
+}
+
+.artists-button-bar {
+    background: var(--green);
+    width: calc(100% + 100px);
+    padding: 18px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: -50px;
+    margin-right: -50px;
+    margin-bottom: -50px;
+}
+
+.artists-button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0px 15px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.artists-button:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.artist-card {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    aspect-ratio: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.artist-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+.artist-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.69);
+    padding: 25px 15px;
+    text-align: center;
+    writing-mode: sideways-lr;
+    text-orientation: mixed;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+}
+
+.artist-name {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--dark);
+    letter-spacing: 2px;
+    font-family: 'Megrim', cursive;
+}
+
+.artist-specialty {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.artist-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.artist-card:hover .artist-info {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.artist-card:hover img {
+    filter: none;
+    transform: none;
+}
+
+/* Services Section */
+.services-section {
+    padding: 100px 50px;
+    background: linear-gradient(rgba(64, 80, 96, 0.85), rgba(64, 80, 96, 0.85)), url('@/../../public/images/bg-3.jpg') center/cover no-repeat;
+    text-align: center;
+    margin-top: 80px;
+    box-shadow: 0 20px 60px rgba(6, 52, 97, 0.6);
+}
+
+.services-section h2 {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.services-subtitle {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 500px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-item {
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.service-item:hover {
+    background: var(--green);
+}
+
+.service-item h3 {
+    color: white;
+    font-size: 26px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.service-item p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Works Section */
+.works-section {
+    padding: 100px 50px 2px 50px;
+}
+
+.works-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.works-subtitle {
+    text-align: center;
+    font-size: 12px;
+    color: var(--dark);
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+.carousel-container {
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);
+    position: relative;
+    padding: 0;
+    margin-bottom: 0;
+    overflow: visible;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: visible;
+    gap: 50px;
+    padding: 40px 0;
+}
+
+.carousel-button {
+    background: none;
+    border: none;
+    font-size: 48px;
+    color: var(--dark);
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.carousel-button:hover {
+    color: var(--green);
+    transform: scale(1.3);
+}
+
+.carousel-image {
+    height: 700px;
+    flex-shrink: 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.carousel-image:hover {
+    box-shadow: 0 0 30px 5px rgba(6, 52, 97, 0.6), 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-image.main {
+    width: 50vw;
+}
+
+.carousel-image.side {
+    height: 700px;
+    width: 50vw;
+    opacity: 0.7;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.carousel-image:hover img {
+    filter: none;
+    transform: none;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(rgba(64, 80, 96, 0.85), rgba(64, 80, 96, 0.85)), url('@/../../public/images/bg-3.jpg') center/cover no-repeat;
+    padding: 80px 50px 0 50px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 250px;
+    align-items: start;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 50px;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    font-size: 13px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.footer-logo {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-section p.company-name {
+    font-size: 50px;
+    letter-spacing: 4px;
+    font-family: 'Megrim', cursive;
+    margin-bottom: -20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.social-links a {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--green);
+    border-color: var(--green);
+}
+
+.footer-map {
+    width: 130%;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    margin-top: 18px;
+    margin-left: -5%;
+    overflow: hidden;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.footer-divider {
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);
+    height: 1px;
+    background: white;
+    margin-top: 40px;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 20px 50px;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 25px;
+        height: auto;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .artists-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel {
+        gap: 15px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .artists-section,
+    .services-section,
+    .works-section,
+    footer {
+        padding: 60px 25px;
+    }
+}
+
+/* Utility */
+.hover-scale {
+    transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
