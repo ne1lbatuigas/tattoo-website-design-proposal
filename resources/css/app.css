@@ -482,6 +482,23 @@ nav a:hover {
     margin-right: calc(-50vw + 50%);
 }
 
+.works-button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0px 15px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 /* Footer */
 footer {
     background: linear-gradient(rgba(64, 80, 96, 0.85), rgba(64, 80, 96, 0.85)), url('@/../../public/images/bg-3.jpg') center/cover no-repeat;
@@ -647,4 +664,3 @@ footer {
 .hover-scale:hover {
     transform: scale(1.05);
 }
-

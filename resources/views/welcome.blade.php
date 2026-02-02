@@ -146,7 +146,7 @@
                     </button>
                 </div>
                 <div class="works-button-bar">
-                    <a href="#contact" class="artists-button">Book Now</a>
+                    <a href="#services" class="works-button">Book Now</a>
                 </div>
             </div>
         </div>
