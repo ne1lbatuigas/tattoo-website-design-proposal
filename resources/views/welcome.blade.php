@@ -145,7 +145,7 @@
                         </svg>
                     </button>
                 </div>
-                <div class="artists-button-bar" style="margin-left: 0; margin-right: 0; margin-bottom: 0; width: 100%;">
+                <div class="works-button-bar">
                     <a href="#contact" class="artists-button">Book Now</a>
                 </div>
             </div>

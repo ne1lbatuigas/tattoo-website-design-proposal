@@ -27,6 +27,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -34,6 +35,7 @@ body {
     background: url('@/../../public/images/bg-1.jpg') center/cover fixed no-repeat;
     color: var(--dark);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -368,6 +370,7 @@ nav a:hover {
 /* Works Section */
 .works-section {
     padding: 100px 50px 2px 50px;
+    overflow: visible;
 }
 
 .works-section h2 {
@@ -386,8 +389,9 @@ nav a:hover {
 }
 
 .carousel-container {
-    width: 100vw;
-    margin: 0 calc(-50vw + 50%);
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
     position: relative;
     padding: 0;
     margin-bottom: 0;
@@ -464,6 +468,18 @@ nav a:hover {
 .carousel-image:hover img {
     filter: none;
     transform: none;
+}
+
+.works-button-bar {
+    background: var(--green);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 18px 50px 18px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-right: calc(-50vw + 50%);
 }
 
 /* Footer */
@@ -568,7 +584,7 @@ footer {
 
 .footer-divider {
     width: 100vw;
-    margin: 0 calc(-50vw + 50%);
+    margin-left: calc(-50vw + 50%);
     height: 1px;
     background: white;
     margin-top: 40px;
