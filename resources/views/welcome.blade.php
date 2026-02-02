@@ -219,18 +219,24 @@
         function initCarouselHover() {
             document.querySelectorAll('.carousel-image').forEach(card => {
                 const img = card.querySelector('img');
-                const bnwSrc = img.src;
+                const bnwSrc = img.getAttribute('data-bnw') || img.src;
                 const colorSrc = card.getAttribute('data-color');
+                
+                // Store BNW source in data attribute for later retrieval
+                img.setAttribute('data-bnw', bnwSrc);
+                
+                // Remove old listeners by cloning the card
+                const newCard = card.cloneNode(true);
+                card.parentNode.replaceChild(newCard, card);
+                
+                const newImg = newCard.querySelector('img');
+                newCard.addEventListener('mouseenter', function() {
+                    newImg.src = newCard.getAttribute('data-color');
+                });
 
-                if (colorSrc) {
-                    card.addEventListener('mouseenter', function() {
-                        img.src = colorSrc;
-                    });
-
-                    card.addEventListener('mouseleave', function() {
-                        img.src = bnwSrc;
-                    });
-                }
+                newCard.addEventListener('mouseleave', function() {
+                    newImg.src = newImg.getAttribute('data-bnw');
+                });
             });
         }
 
@@ -242,6 +248,11 @@
             document.getElementById('carouselImg').src = slides[currentSlide];
             document.getElementById('prevImg').querySelector('img').src = slides[prevSlide];
             document.getElementById('nextImg').querySelector('img').src = slides[nextSlide];
+            
+            // Store BNW sources in data attributes
+            document.getElementById('carouselImg').setAttribute('data-bnw', slides[currentSlide]);
+            document.getElementById('prevImg').querySelector('img').setAttribute('data-bnw', slides[prevSlide]);
+            document.getElementById('nextImg').querySelector('img').setAttribute('data-bnw', slides[nextSlide]);
             
             document.getElementById('mainImg').setAttribute('data-color', colorSlides[currentSlide]);
             document.getElementById('prevImg').setAttribute('data-color', colorSlides[prevSlide]);
